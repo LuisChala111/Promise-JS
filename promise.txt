@@ -1,0 +1,25 @@
+fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+.then((tipoDeDato)=> tipoDeDato.json())
+.then((data)=>{
+    console.log(data);
+})
+//data
+fetch("https://pokeapi.co/api/v2/pokemon?limit=1")
+.then((tipoDeDato)=> tipoDeDato.json())
+.then((data)=>{
+    //console.log(data.results)
+   data.results.forEach(function(pokemon){
+        fetch(pokemon.url)
+        .then(t => t.json())
+        .then((data_2)=> {
+            console.log(data_2);
+        })
+    })
+});
+//data.results: llama otro endpoin
+21:32
+ejercicio>
+21:32
+//Por medio de java script hacer las dos consultas
+//• Una función que me devuelva el listado
+//• Una función que me devuelva un pokemon especifico por su nombre
